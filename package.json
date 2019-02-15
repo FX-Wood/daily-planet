@@ -1,0 +1,24 @@
+{
+  "name": "daily-planet",
+  "version": "0.0.1",
+  "description": "exploration of express.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fx-wood/daily-planet.git"
+  },
+  "author": "FX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fx-wood/daily-planet/issues"
+  },
+  "homepage": "https://github.com/fx-wood/daily-planet#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
