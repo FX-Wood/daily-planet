@@ -31,7 +31,7 @@ app.get('/', function(req, res) {
 })
 
 // /articles | GET
-app.get(function(req, res) {
+app.get('/articles', function(req, res) {
     res.render('articles', {data: getArticles()})
 });
 
@@ -45,7 +45,7 @@ app.route('/articles/:id')
     })
 
     .delete(function(req, res) {
-
+        
     })
 
 // /widgets/new | GET
