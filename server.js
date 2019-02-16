@@ -28,30 +28,27 @@ app.set('view engine', 'ejs');
 // root | GET 
 app.get('/', function(req, res) {
     res.redirect('/articles');
-});
+})
 
-// /articles | GET | PUT
-app.get('/articles', function(req, res) {
+// /articles | GET
+app.get(function(req, res) {
     res.render('articles', {data: getArticles()})
 });
 
-app.post('/articles', function(req, res) {
-    
-    res.redirect('/articles');
-});
-
 // /articles/:id | GET | PUT | DELETE
-app.get('/articles/:id', function(req, res) {
-    res.render('articles/show');
-});
-
-app.put('/articles/:id', function(req, res) {
+app.route('/articles/:id')
+    .get(function(req, res) {
+        res.render('articles/show');
+    })
+    .put(function(req, res) {
     
-});
+    })
 
-app.delete('/articles/:id', function(req, res) {
+    .delete(function(req, res) {
 
-});
+    })
 
 // /widgets/new | GET
-
+app.get('articles/new', function(req, res) {
+    
+})
