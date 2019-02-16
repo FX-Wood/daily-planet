@@ -1,5 +1,15 @@
 <% include ../partials/header.ejs %>
 
-<h2> Articles</h2>
+<h2> Articles </h2>
+    <p><% data %></p>
+<% data.forEach(function(article) { %>
+    <div class="article-box">
+        <h4> <%= article.title %></h4>
+        <p class="tagline"> <%= article.body %></p>
+    </div>
+<% }) %>
+<div>
+
+</div>
 
 <% include ../partials/footer.ejs %>

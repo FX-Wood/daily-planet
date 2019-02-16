@@ -1,0 +1,15 @@
+/* * {
+    border: 2px solid black;
+} */
+body {
+    background-color: lightgray;
+}
+
+.tagline {
+    padding-left: 2em;
+}
+
+.article-box {
+    margin: 1em 0;
+    border: 3px dashed black;
+}
