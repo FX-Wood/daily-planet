@@ -5,5 +5,12 @@
     <p class="tagline"> <%= data.body %></p>
 </div>
 
+<h3>enter changes</h3>
+<div class="article-box">
+    <form method="POST" action="/articles/<%= req.params.id %>/?_method=PUT"></form>
+    <input type="text" name="title">
+    <input type="textbox" name="body">
+    <input type="submit">
+</div>
 
 <% include ../partials/footer %>

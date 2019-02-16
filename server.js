@@ -38,14 +38,16 @@ app.get('/articles', function(req, res) {
 // /articles/:id | GET | PUT | DELETE
 app.route('/articles/:id')
     .get(function(req, res) {
-        res.render('articles/show', {data: getArticles()[req.params.id]});
+        res.render('articles/show', { id: req.params.id, data: getArticles()[req.params.id]});
     })
     .put(function(req, res) {
-        
+        let a = getArticles();
+        setArticles(a.push({ title: JSON.parse(req.body.title), body: JSON.parse(req.body.body) }))
+        res.redirect('articles/' + a.length)
     })
 
     .delete(function(req, res) {
-        
+
     })
 
 // /widgets/new | GET
