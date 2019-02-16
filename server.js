@@ -38,10 +38,10 @@ app.get(function(req, res) {
 // /articles/:id | GET | PUT | DELETE
 app.route('/articles/:id')
     .get(function(req, res) {
-        res.render('articles/show');
+        res.render('articles/show', {data: getArticles()[req.params.id]});
     })
     .put(function(req, res) {
-    
+        
     })
 
     .delete(function(req, res) {
@@ -50,5 +50,5 @@ app.route('/articles/:id')
 
 // /widgets/new | GET
 app.get('articles/new', function(req, res) {
-    
+
 })
