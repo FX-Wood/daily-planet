@@ -1,19 +1,21 @@
 <% include ../partials/header.ejs %>
 
-<h2> Articles </h2>
-    <p><% data %></p>
-<% data.forEach(function(article, i) { %>
-    <div class="article-box">
-        <h4> <%= article.title %></h4>
-        <p class="tagline"> <%= article.body %></p>
-       <form action="none">
-            <input type="submit" value="Edit" formaction="/articles/<%= i %>" formmethod="GET">
-            <input type="submit" value="Delete" formmethod="POST" formaction="/articles/<%= i %>/?_method=DELETE">
-        </form>
-    </div>
-<% }) %>
-<div>
+<main>
 
-</div>
+    <img class="front-page-img" src="/static/img/headline image.jpg" alt="Superman taken into custody">
+    <% data.forEach(function(article, i) { %>
+        <div class="article-box">
+            <h1> <%= article.title %></h1>
+            <hr>
+            <%= article.author %>
+            <hr>
+            <p class="tagline"> <%= article.body %></p>
+            <form action="none">
+                <input type="submit" value="Edit" formaction="/articles/<%= i %>" formmethod="GET">
+                <input type="submit" value="Delete" formmethod="POST" formaction="/articles/<%= i %>/?_method=DELETE">
+            </form>
+        </div>
+    <% }) %>
+</main>
 
 <% include ../partials/footer.ejs %>

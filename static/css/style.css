@@ -4,6 +4,19 @@
 body {
     background-color: lightgray;
 }
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: fit-content;
+}
+.front-page-img {
+    
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+}
 
 .tagline {
     padding-left: 2em;
