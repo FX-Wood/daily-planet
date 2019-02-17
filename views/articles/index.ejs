@@ -1,23 +1,30 @@
 <% include ../partials/header.ejs %>
 
 <main>
-    <img class="front-page-img" src="img/headline.jpg" alt="Superman taken into custody" />
+    <header class='banner'>
+        <h1>A hero falls: Man of Steel behind bars</h1>
+        <hr>
+        <h2>Superman awaits criminal trial as investigators build case</h1>
+    </header>
     <div class="article-box--lead">
+        <img class="lead-img" src="img/headline.jpg" alt="Superman taken into custody" />
+        <p class="caption"> <%= data.lead.caption %> </p>
+        <hr>
         <p class="byline--lead"></p>
-        <p class="tagline--lead"></p>
+        <p class="body--lead"><%= data.lead.body %></p>
     </div>
     
-    <% data.forEach(function(article, i) { %>
+    <% data.articles.forEach(function(article, i) { %>
         <div class='article-box c<%= i === 0? "topl" : i === 1? "topr" : i-1 %>'>
 
-            <h1> <%= article.title %></h1>
+            <h2> <%= article.title %></h2>
             <hr>
             <%= article.author %>
             <hr>
             <p class="tagline"> <%= article.body %></p>
             <form action="none">
-                <input type="submit" value="Edit" formaction="/articles/<%= i %>" formmethod="GET">
-                <input type="submit" value="Delete" formmethod="POST" formaction='/articles/<%= i %>/?_method=DELETE'>
+                <input class="edit" type="submit" value="Edit" formaction="/articles/<%= i %>" formmethod="GET">
+                <input class="delete" type="submit" value="Delete" formmethod="POST" formaction='/articles/<%= i %>/?_method=DELETE'>
             </form>
         </div>
     <% }) %>

@@ -43,7 +43,7 @@ app.get('/articles', function(req, res) {
 app.route('/articles/:id')
     .get(function(req, res) {
         console.log('GET /articles/:id')
-        res.render('articles/show', { id: req.params.id, data: getArticles()[req.params.id]});
+        res.render('articles/show', { id: req.params.id, data: getArticles().articles[req.params.id]});
     })
     .put(function(req, res) {
         console.log('PUT /articles/:id')
