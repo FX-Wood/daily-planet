@@ -3,14 +3,18 @@
 <div class="article-box">
     <h4> <%= data.title %></h4>
     <p class="tagline"> <%= data.body %></p>
+
 </div>
 
 <h3>enter changes</h3>
 <div class="article-box">
-    <form method="POST" action="/articles/<%= req.params.id %>/?_method=PUT"></form>
-    <input type="text" name="title">
-    <input type="textbox" name="body">
-    <input type="submit">
+    <form method="POST" action="/articles/<%= id %>/?_method=PUT">
+        <input type="text" name="title"> <br>
+        <input type="textbox" name="body"> <br>
+        <input type="submit">
+        
+    </form>
 </div>
+
 
 <% include ../partials/footer %>
