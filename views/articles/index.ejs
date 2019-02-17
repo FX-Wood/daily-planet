@@ -1,10 +1,15 @@
 <% include ../partials/header.ejs %>
 
 <main>
-
-    <img class="front-page-img" src="/static/img/headline image.jpg" alt="Superman taken into custody">
+    <img class="front-page-img" src="img/headline.jpg" alt="Superman taken into custody" />
+    <div class="article-box--lead">
+        <p class="byline--lead"></p>
+        <p class="tagline--lead"></p>
+    </div>
+    
     <% data.forEach(function(article, i) { %>
-        <div class="article-box">
+        <div class='article-box c<%= i === 0? "topl" : i === 1? "topr" : i-1 %>'>
+
             <h1> <%= article.title %></h1>
             <hr>
             <%= article.author %>
@@ -12,7 +17,7 @@
             <p class="tagline"> <%= article.body %></p>
             <form action="none">
                 <input type="submit" value="Edit" formaction="/articles/<%= i %>" formmethod="GET">
-                <input type="submit" value="Delete" formmethod="POST" formaction="/articles/<%= i %>/?_method=DELETE">
+                <input type="submit" value="Delete" formmethod="POST" formaction='/articles/<%= i %>/?_method=DELETE'>
             </form>
         </div>
     <% }) %>
