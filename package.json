@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/fx-wood/daily-planet.git"
   },
+  "nodemonConfig": {
+    "ignore": ["static/articles.json", "static/articles-lock.json"] 
+  },
   "author": "FX",
   "license": "MIT",
   "bugs": {
